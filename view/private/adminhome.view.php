@@ -31,11 +31,11 @@ if (is_array($cssSelectors)) {
         <a href="?addSelector">
             <li class="list-group-item">Add Selectors</li>
         </a>
-        <a href="?addText">
-            <li class="list-group-item">Add Text</li>
-        </a>
         <a href="?updateSelector">
             <li class="list-group-item">Update Selectors</li>
+        </a>
+        <a href="?addText">
+            <li class="list-group-item">Add Text</li>
         </a>
         <a href="?updateText">
             <li class="list-group-item">Update Text</li>
