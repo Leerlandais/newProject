@@ -1,3 +1,7 @@
+<?php
+// DO EVERYTHING NEEDED HERE. DO THIS ONE FIRST
+?>
+
 <fieldset class="reset">
     <legend class="reset">Add CSS Selector</legend>
     <form action="" method="POST" id = "loginForm">

@@ -22,6 +22,8 @@ if (is_array($cssSelectors)) {
         <?php
     }
 }
+
+// MAKE THINGS PRETTY
 ?>
     </ul>
 

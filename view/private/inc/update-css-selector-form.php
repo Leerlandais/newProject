@@ -1,3 +1,7 @@
+<?php
+// DO EVERYTHING NEEDED HERE. FINISH THE INSERT BEFORE THIS ONE
+?>
+
 <fieldset class="reset">
     <legend class="reset">Update CSS Selector</legend>
     <form action="" method="POST" id = "loginForm">

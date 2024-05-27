@@ -1,3 +1,6 @@
+<?php
+// DO EVERYTHING NEEDED HERE. ALSO DO THIS ONE FIRST
+?>
 <fieldset class="reset">
     <legend class="reset">Add Text</legend>
     <form action="" method="POST" id = "loginForm">

@@ -1,3 +1,7 @@
+<?php
+// DO EVERYTHING NEEDED HERE. AGAIN, FINISH THE INSERT FIRST
+?>
+
 <fieldset class="reset">
     <legend class="reset">Update Text</legend>
     <form action="" method="POST" id = "loginForm">
