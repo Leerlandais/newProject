@@ -9,7 +9,30 @@
         <label for="addSelectorName" id="addSelectorNameLabel"></label>
         <input type="text" name="addSelectorName" id="addSelectorName" aria-describedby="addSelectorName" placeholder="CHANGE_THIS">
 
-        <button type="submit" class="btn btn-primary subButtonNorm">Submit Text Here</button>
+        <button type="submit" class="btn btn-primary submitButton"></button>
     </form>
     
 </fieldset>
+
+<div class="container-fluid">
+
+<fieldset class="reset w-25 d-flex flex-column justify-content-center align-items-center flex-wrap">
+    <legend class="reset" id="existingSelectorList"></legend>
+    <p class="h3" id="existingSelectorHead"></p>
+    <ul class="list-group w-50">
+        <?php
+                if (is_array($cssSelectors)) {
+                    foreach ($cssSelectors as $css) {
+                        ?>
+                        <a href="?updateCss&id=<?=$css["css_id"]?>">
+                            <li class="list-group-item"><?=$css['selector']?></li>
+                        </a>
+                        <?php
+                    }
+                }
+        ?>
+
+    </ul>
+</fieldset>
+
+</div>

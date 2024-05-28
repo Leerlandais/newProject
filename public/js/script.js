@@ -48,12 +48,12 @@ $(document).ready(function() {
                     element =  $(`.${elem}`);
                     console.log(theText);
                     element.html(theText);        
-                }
-                        
+                    
                     if (element.next().attr('placeholder') !== undefined) {
                         console.log(`Element #${elem} has a placeholder attribute.`);
                         element.next().attr('placeholder', theText);
                     }
+                }
                 }
             
             
