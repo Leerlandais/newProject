@@ -33,7 +33,7 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
       <label for="typeInpClass" id="typeInpClassLabel" class="mx-2"></label>
       <input type="radio" name="typeInp" id="typeInpClass" value="class">
       </div>
-      <button type="submit" class="submitButton" <?=$block?>></button>
+      <button type="submit" class="submitButton"" <?=$block?>></button>
     </form>
   </fieldset>
 </div>

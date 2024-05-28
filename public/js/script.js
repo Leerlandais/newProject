@@ -21,7 +21,7 @@ $(document).ready(function() {
             .catch(function(error){
                 console.log(error.message);
         });
-/*
+
         fetch("?jsonCSS")
         .then(function(response){
             response.json().then(function(dataCSS){
@@ -34,56 +34,54 @@ $(document).ready(function() {
                 .catch(function(error){
                     console.log(error.message);
             });
-*/
+
 
             function makeGlobalText(datas) {
                 let element = '';
                 for (let data in datas) {
-                    let elem = datas[data].elem;
+                    let elem     = datas[data].elem;
                     let theText  = datas[data].theText;
-                    let theType     = datas[data].theType;
+                    let theType  = datas[data].theType;
                   //  console.log(elem);
                     theType === "id" ? 
                     element = $(`#${elem}`) :
                     element =  $(`.${elem}`);
-                    console.log(element);
+                   // console.log(element);
                     element.html(theText);        
                     
                     if (element.next().attr('placeholder') !== undefined) {
-                        console.log(`Element #${elem} has a placeholder attribute.`);
+                        console.log(`#${elem} has a placeholder`);
                         element.next().attr('placeholder', theText);
                     }
                 }
                 }
             
             
-            function makeGlobalCSS(datas) {
-                datas.forEach(data => {
-                    let selector = data.selector;
-                    let attrib = data.attrib;
-                    let value = data.val.replace(/;$/, ''); // Remove ; if present. Took me ages to find my error!
-                    let element = $(`#${selector}`);
-            
-                    if (element.length) { // Check if the element exists
-                        if (attrib !== "") {    // a check in case I had forgotten to add the attribute (another error I encountered)
-                            /*
-                            // my usual collection of console logs. Today I discovered console.warn, also very useful
-                            console.log('Element:', element);
-                            console.log('Selector:', selector);
-                            console.log('Attribute:', attrib);
-                            console.log('Value:', value);
-                            */
-                            element.css(attrib, value);
+                function makeGlobalCSS(datas) {
+                    datas.forEach(data => {
+                        let selector = data.sel_name; 
+                        let attrib   = data.att_name; 
+                        let theType  = data.sel_type;
+                        let value    = data.new_val; 
+                
+                        if (theType === "id") {
+                            element = $(`#${selector}`);
+                        } else if (theType === "class") {
+                            element = $(`.${selector}`);
                         } else {
-                            console.warn(`Attribute of ${selector} is empty`);
+                            element = $(`${selector}`);
                         }
-                    } else {
-                        console.warn(`Element ${selector} not found`);
-                    }
-                });
-            }
-            
-
-        
-        
+                
+                        if (element.length) { 
+                            if (attrib) {
+                                    element.css(attrib, value);                                
+                            } else {
+                                console.warn(`Attrib ${selector} is empty`); // I like this! console.warn, much prettier than .log
+                            }
+                        } else {
+                            console.warn(`Problem finding  ${selector}`);
+                        }
+                    });
+                }
+                
 }); // end ready

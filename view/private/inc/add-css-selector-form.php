@@ -9,9 +9,9 @@
         <label for="addSelectorName" id="addSelectorNameLabel"></label>
         <input type="text" name="addSelectorName" id="addSelectorName" aria-describedby="addSelectorName" placeholder="CHANGE_THIS">
         <div class="d-flex flex-row">
-            <label for="labelTypeSelect">Selector</label><input type="radio" name="selectorType"id="labelTypeSelect" class="mx-1" checked>
-            <label for="labelTypeId">ID</label><input type="radio" name="selectorType"id="labelTypeId" class="mx-1">
-            <label for="labelTypeClass">Class</label><input type="radio" name="selectorType"id="labelTypeClass" class="mx-1">
+            <label for="labelTypeSelect">Selector</label><input type="radio" name="selectorType"id="labelTypeSelect" class="mx-1" checked value="selector">
+            <label for="labelTypeId">ID</label><input type="radio" name="selectorType"id="labelTypeId" class="mx-1" value="id">
+            <label for="labelTypeClass">Class</label><input type="radio" name="selectorType"id="labelTypeClass" class="mx-1" value="class">
         </div>
 
         <button type="submit" class="btn btn-primary submitButton"></button>

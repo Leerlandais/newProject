@@ -26,9 +26,9 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
     <label for="addCssSelector" class="form-label text-danger"><?=$getSelector["sel_name"]?></label><br>
     <input type="text" name="addCssSelector" class="d-none" value="<?=$getSelector["np_css_selector_id"]?>" <?=$block?>>
     <label for="addCssAttrib">Attrib : </label>
-    <input type="text" class="form-control" name="addCssAttrib"  value="<?=$getSelector["new_val"]?>" placeholder="<?=$getSelector["new_val"]?>" <?=$block?>>
+    <input type="text" class="form-control text-center" name="addCssAttrib"  value="<?=$getSelector["att_name"]?>" placeholder="<?=$getSelector["att_name"]?>" <?=$block?>>
     <label for="addCssValue">Value : </label>
-    <input type="text" class="form-control" name="addCssValue"  value="<?=$getSelector["new_val"]?>" <?=$block?>>
+    <input type="text" class="form-control text-center" name="addCssValue"  value="<?=$getSelector["new_val"]?>" <?=$block?>>
 
     <button type="submit" class="btn btn-primary submitButton" <?=$block?>></button>
   </form>

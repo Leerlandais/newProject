@@ -5,7 +5,7 @@
     font-family: HVNRoman;
     src: url("../assets/helvetica-neue-5/HelveticaNeueRoman.otf");
   }
-
+/*
 body, .bodyClassic {
     background: hsla(197, 14%, 57%, 1);
     background: linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
@@ -41,3 +41,5 @@ body, .bodyClassic {
     background-repeat: repeat-x;
     height: 300vh;
 }
+
+*/
