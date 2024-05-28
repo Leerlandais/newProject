@@ -31,19 +31,7 @@
     </ul>
     </div>
 
-    <ul class="list-group">
-        <?php
-    if (is_array($cssSelectors)) {
-    foreach ($cssSelectors as $css) {
-        ?>
-            <li class="list-group-item"><?=$css['selector']?></li>
-        <?php
-    }
-}
 
-// MAKE THINGS PRETTY
-?>
-    </ul>
     <?php include ("inc/include-controller.php"); ?>
 
     <?php include ("inc/footer.private.php"); ?>

@@ -1,5 +1,12 @@
 <?php
 
+if (isset($_POST["user_lang"])) {
+    $_SESSION["np_user_lang"] = $_POST["user_lang"];
+}
+$allText = getTextByUserLang($db, $_SESSION["np_user_lang"]);
+
+
+
 // LOGIN CALL
 if (isset($_POST["userName"], 
           $_POST["userPwd"])) 
