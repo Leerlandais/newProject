@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 27, 2024 at 07:50 PM
+-- Generation Time: May 28, 2024 at 05:52 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -48,7 +48,14 @@ CREATE TABLE IF NOT EXISTS `np_css_selector` (
   `np_css_selector_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `np_css_selector_name` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`np_css_selector_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_css_selector`
+--
+
+INSERT INTO `np_css_selector` (`np_css_selector_id`, `np_css_selector_name`) VALUES
+(1, 'body');
 
 -- --------------------------------------------------------
 
@@ -62,6 +69,35 @@ CREATE TABLE IF NOT EXISTS `np_selector_has_attrib` (
   `attrib_has_id` int UNSIGNED NOT NULL,
   PRIMARY KEY (`selector_has_id`,`attrib_has_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `np_text`
+--
+
+DROP TABLE IF EXISTS `np_text`;
+CREATE TABLE IF NOT EXISTS `np_text` (
+  `np_text_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `np_text_element` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
+  `np_text_en` text COLLATE utf8mb4_general_ci NOT NULL,
+  `np_text_fr` text COLLATE utf8mb4_general_ci NOT NULL,
+  `np_text_type` varchar(8) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'id',
+  PRIMARY KEY (`np_text_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_text`
+--
+
+INSERT INTO `np_text` (`np_text_id`, `np_text_element`, `np_text_en`, `np_text_fr`, `np_text_type`) VALUES
+(1, 'typeInpIdLabel', 'ID', 'ID', 'id'),
+(2, 'typeInpClassLabel', 'Class', 'Classe', 'id'),
+(3, 'submitButton', 'Submit', 'Soumettre', 'class'),
+(4, 'addSelectorNameLabel', 'Selector Name :', 'Nom du Sélecteur', 'id'),
+(5, 'existingSelectorList', 'Existing Selectors', 'Sélecteurs Existants', 'id'),
+(6, 'existingSelectorHead', 'Click to Update', 'Cliquez pour Mettre à Jour', 'id'),
+(7, 'updateSelectorField', 'Add Style to Element', 'Ajouter du Style à l&#039;élément', 'id');
 
 -- --------------------------------------------------------
 
