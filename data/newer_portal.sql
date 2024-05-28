@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 28, 2024 at 07:57 AM
+-- Generation Time: May 28, 2024 at 08:08 PM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -35,7 +35,17 @@ CREATE TABLE IF NOT EXISTS `np_css_attrib` (
   `np_css_attrib_old_val` varchar(1024) COLLATE utf8mb4_general_ci NOT NULL,
   `np_css_attrib_def_val` varchar(1024) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`np_css_attrib_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_css_attrib`
+--
+
+INSERT INTO `np_css_attrib` (`np_css_attrib_id`, `np_css_attrib_name`, `np_css_attrib_new_val`, `np_css_attrib_old_val`, `np_css_attrib_def_val`) VALUES
+(2, 'background', 'url&lpar;\"img/gb.svg\"&rpar;', '', ''),
+(4, 'background', 'linear-gradient(-90deg, hsla(108, 14%, 57%, 1) 0%, hsla(217, 17%, 94%, 1) 100%)', '', 'linear-gradient(-90deg, hsla(108, 14%, 57%, 1) 0%, hsla(217, 17%, 94%, 1) 100%)'),
+(5, 'background-size', 'cover', '', ''),
+(6, 'border', '1px red solid', '', '');
 
 -- --------------------------------------------------------
 
@@ -47,15 +57,18 @@ DROP TABLE IF EXISTS `np_css_selector`;
 CREATE TABLE IF NOT EXISTS `np_css_selector` (
   `np_css_selector_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `np_css_selector_name` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
+  `np_css_selector_type` varchar(16) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'selector',
   PRIMARY KEY (`np_css_selector_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `np_css_selector`
 --
 
-INSERT INTO `np_css_selector` (`np_css_selector_id`, `np_css_selector_name`) VALUES
-(1, 'body');
+INSERT INTO `np_css_selector` (`np_css_selector_id`, `np_css_selector_name`, `np_css_selector_type`) VALUES
+(1, 'body', 'selector'),
+(3, 'englishButton', 'id'),
+(4, 'submitButton', 'class');
 
 -- --------------------------------------------------------
 
@@ -69,6 +82,16 @@ CREATE TABLE IF NOT EXISTS `np_selector_has_attrib` (
   `attrib_has_id` int UNSIGNED NOT NULL,
   PRIMARY KEY (`selector_has_id`,`attrib_has_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_selector_has_attrib`
+--
+
+INSERT INTO `np_selector_has_attrib` (`selector_has_id`, `attrib_has_id`) VALUES
+(1, 4),
+(3, 2),
+(3, 5),
+(4, 6);
 
 -- --------------------------------------------------------
 
@@ -84,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `np_text` (
   `np_text_fr` text COLLATE utf8mb4_general_ci NOT NULL,
   `np_text_type` varchar(8) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'id',
   PRIMARY KEY (`np_text_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `np_text`
@@ -99,7 +122,13 @@ INSERT INTO `np_text` (`np_text_id`, `np_text_element`, `np_text_en`, `np_text_f
 (6, 'existingSelectorHead', 'Click to Update', 'Cliquez pour Mettre à Jour', 'id'),
 (7, 'updateSelectorField', 'Add Style to Element', 'Ajouter du Style à l&#039;élément', 'id'),
 (8, 'undoButton', 'Undo', 'Annuler', 'id'),
-(9, 'resetButton', 'Reset', 'Réinitialiser', 'id');
+(9, 'resetButton', 'Reset', 'Réinitialiser', 'id'),
+(13, 'updateTableHeadId', 'ID', 'ID', 'class'),
+(14, 'updateTableHeadName', 'Element ID', 'ID de l&#039;élément', 'class'),
+(15, 'updateTableHeadText', 'Content', 'Contenu', 'class'),
+(17, 'navAddSelect', 'Add Selector', 'Ajout un Sélecteur', 'id'),
+(18, 'navAddTxt', 'Add Text', 'Ajout du Texte', 'id'),
+(19, 'navUpdText', 'Update Text', 'Mettre Texte à Jour', 'id');
 
 -- --------------------------------------------------------
 
