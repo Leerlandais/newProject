@@ -1,6 +1,6 @@
 <?php
 // DO EVERYTHING NEEDED HERE. FINISH THE INSERT BEFORE THIS ONE
-var_dump($getSelector);
+// var_dump($getSelector);
 ?>
 <?php
 $block = "";
