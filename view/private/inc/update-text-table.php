@@ -4,9 +4,9 @@
                         <table class="table table-bordered table-striped" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true">
                         <thead>
                                 <tr>
-                                    <th class="text-center" id="updateTableHeadId"></th>
-                                    <th class="text-center" id="updateTableHeadName"></th>
-                                    <th class="text-center" id="updateTableHeadText"></th>
+                                    <th class="text-center updateTableHeadId"></th>
+                                    <th class="text-center updateTableHeadName"></th>
+                                    <th class="text-center updateTableHeadText"></th>
                                     <th class="text-center">Modifier</th>
   
                                     
@@ -14,8 +14,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    
-                                        
+                                    // replace these with a foreach - $allText                                        
                                         ?>
                                     <tr>
                                         <td><? ?></td>
