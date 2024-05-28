@@ -20,10 +20,11 @@ if (isset($_GET["logout"])) {
 
 
 // ADD SELECTOR    
-if (isset($_POST["addSelectorName"])) {
+if (isset($_POST["addSelectorName"],
+          $_POST["selectorType"])) {
     $selector = standardClean($_POST["addSelectorName"]);
-
-    $addNewSelector = addNewSelectorToDB($db, $selector);
+    $type = standardClean($_POST["selectorType"]);
+    $addNewSelector = addNewSelectorToDB($db, $selector, $type);
     if (is_string($addNewSelector)) {
         $errorMessage = $addNewSelector;
     }

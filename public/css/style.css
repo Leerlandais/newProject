@@ -16,4 +16,20 @@
 
 .reset {  /*  This is used to overwrite bootstrap settings (particularly for fieldset and legend) */
   all: revert;
+} 
+
+#englishButton {
+  background-image: url("../img/gb.svg");
+  background-size: cover;
+  width: 2vw;
+  height: 2vh;
+  margin: 0 0.5vw;
+}
+
+#frenchButton {
+  background-image: url("../img/fr.svg");
+  background-size: cover;
+  width: 2vw;
+  height: 2vh;
+  margin: 0 0.5vw;
 }

@@ -2,7 +2,7 @@
 
 function getAllCssSelectors(PDO $db) : array | string {
     $sql = "SELECT `np_css_selector`.`np_css_selector_name` AS sel_name, 
-                   `np_css_selector`.`np_css_selector_id`, 
+                   `np_css_selector`.`np_css_selector_id` AS css_id, 
                    `np_css_attrib`.`np_css_attrib_name` AS att_name, 
                    `np_css_attrib`.`np_css_attrib_new_val` AS new_val, 
                    `np_css_attrib`.`np_css_attrib_old_val` AS old_val, 

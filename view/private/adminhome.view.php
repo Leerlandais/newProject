@@ -12,8 +12,8 @@
     <body class="text-center">
         <p class="h1">HI BOSS</p>
         <form method="POST" class="d-flex flex-row">
-    <button class="btn langButton langEN" value="en" type="submit" name="user_lang">EN</button>
-    <button class="btn langButton langFR" value="fr" type="submit" name="user_lang">FR</button>
+    <button class="btn langButton langEN" value="en" type="submit" name="user_lang" id="englishButton"></button>
+    <button class="btn langButton langFR" value="fr" type="submit" name="user_lang" id="frenchButton"></button>
 </form>
 
         <?php include ("inc/error-message.php"); // leave this here to display any eventual error message - include this on all pages ?>
