@@ -29,6 +29,17 @@ if (isset($_POST["addSelectorName"])) {
     }
 }
 
+
+// GET SELECTOR FOR UPDATE 
+if (isset($_GET["updateCss"],
+          $_GET["id"]) && 
+          ctype_digit($_GET["id"])
+          ) {
+            $selector       = intClean($_GET["id"]);
+            $getSelector    = getSelectorForUpdate($db, $selector);
+          }
+
+          
 // ADD TEXT
 if (isset(
     $_POST["selectInp"],
