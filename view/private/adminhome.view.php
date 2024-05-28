@@ -21,16 +21,16 @@
 <div class="container">
     <ul class="list-group d-flex flex-row justify-content-around">
         <a href="?addSelector">
-            <li class="list-group-item">Add Selectors</li>
+            <li class="list-group-item" id="navAddSelect"></li>
         </a>
         <a href="?updateSelector">
-            <li class="list-group-item">Update Selectors</li>
+            <li class="list-group-item" id="navUpdSelect"></li>
         </a>
         <a href="?addText">
-            <li class="list-group-item">Add Text</li>
+            <li class="list-group-item" id="navAddTxt"></li>
         </a>
         <a href="?updateText">
-            <li class="list-group-item">Update Text</li>
+            <li class="list-group-item" id="navUpdText"></li>
         </a>
     </ul>
     </div>
