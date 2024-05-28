@@ -39,7 +39,18 @@ if (isset($_GET["updateCss"],
             $getSelector    = getSelectorForUpdate($db, $selector);
           }
 
-          
+// ADD SELECTOR
+if (isset($_POST["addCssSelector"],
+          $_POST["addCssAttrib"],
+          $_POST["addCssValue"]
+        ) && ctype_digit($_POST["addCssSelector"])
+    ) {
+        $selector = intval(intClean($_POST["addCssSelector"]));
+        $attrib   = standardClean($_POST["addCssAttrib"]);
+        $newVal   = standardClean($_POST["addCssValue"]);
+
+        $addAttrib = addAttribToSelector($db, $selector, $attrib, $newVal);
+    }          
 // ADD TEXT
 if (isset(
     $_POST["selectInp"],
