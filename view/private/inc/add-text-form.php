@@ -16,7 +16,7 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
 
 
 <fieldset class="reset">
-<p class="h3 text-center"></p>
+<p class="h3 text-center" id="addTextTest"></p>
 <div class="container d-flex flex-row">
   <div class="container text-center">
     <fieldset class="reset"><legend  class="reset" id="addTextLegend"></legend>

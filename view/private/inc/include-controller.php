@@ -7,7 +7,7 @@ if (isset($_GET["addSelector"])) {
 }else if (isset($_GET["updateCss"])) {
     include_once("update-css-selector-form.php");
 }else if (isset($_GET["updateText"])) {
-    include_once("update-text-form.php");
+    include_once("update-text-table.php");
 }
 
 /*

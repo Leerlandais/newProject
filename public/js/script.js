@@ -42,11 +42,11 @@ $(document).ready(function() {
                     let elem = datas[data].elem;
                     let theText  = datas[data].theText;
                     let theType     = datas[data].theType;
-                    console.log(elem);
+                  //  console.log(elem);
                     theType === "id" ? 
                     element = $(`#${elem}`) :
                     element =  $(`.${elem}`);
-                    console.log(theText);
+                    console.log(element);
                     element.html(theText);        
                     
                     if (element.next().attr('placeholder') !== undefined) {

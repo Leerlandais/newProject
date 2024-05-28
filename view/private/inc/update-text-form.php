@@ -9,6 +9,6 @@
     <input type="text" name="nameInp" id="nomInp" aria-describedby="userNameField" placeholder="User Name">
     <label for="pwdInp" id="logLabelPwd"></label>
     <input type="password" name="passInp" id="pwdInp" placeholder="Password">
-    <button type="submit" id="submitLogin"></button>
+    <button type="submit" class="submitButton"></button>
 </form>
 </fieldset>
