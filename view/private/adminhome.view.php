@@ -18,7 +18,7 @@
 
         <?php include ("inc/error-message.php"); // leave this here to display any eventual error message - include this on all pages ?>
 <?php
-var_dump($cssSelectors);
+var_dump($allText);
 ?>
 
 <div class="container">

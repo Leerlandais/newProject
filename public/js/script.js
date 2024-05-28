@@ -9,6 +9,7 @@ displayScreenWidth();
 
 $(document).ready(function() {
 
+
     fetch("?json")
     .then(function(response){
         response.json().then(function(data){
@@ -47,6 +48,7 @@ $(document).ready(function() {
                     element = $(`#${elem}`) :
                     element =  $(`.${elem}`);
                    // console.log(element);
+                   
                     element.html(theText);        
                     
                     if (element.next().attr('placeholder') !== undefined) {
@@ -83,5 +85,6 @@ $(document).ready(function() {
                         }
                     });
                 }
+
                 
 }); // end ready

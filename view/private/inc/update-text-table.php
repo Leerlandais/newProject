@@ -1,6 +1,7 @@
 <div class="container">
-<div class="table-responsive">
-                        <table class="table table-bordered table-striped" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true" data-checkbox-header="true">
+<div class="table-responsive"> 
+
+                        <table class="table table-bordered table-striped" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true">
                         <thead>
                                 <tr>
                                     <th class="text-center" id="updateTableHeadId"></th>
@@ -29,6 +30,7 @@
                                     ?>
                             </tbody>
                         </table>
+
                     </div>
 
                     </div>
