@@ -15,6 +15,13 @@ if (isset($_GET["logout"])) {
         $errorMessage = "No entries yet";
     }
 
+if (isset($_POST["addSelectorName"])) {
+    $selector = standardClean($_POST["addSelectorName"]);
 
+    $addNewSelector = addNewSelectorToDB($db, $selector);
+    if (is_string($addNewSelector)) {
+        $errorMessage = $addNewSelector;
+    }
+}
 
     include "../view/private/adminhome.view.php";

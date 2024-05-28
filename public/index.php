@@ -6,6 +6,7 @@ require_once("../controller/dbConnectController.php");
 require_once("../model/protectionModels/laundryModel.php");
 require_once("../model/connectionModels/loginModel.php");
 require_once("../model/cssModels/getCssModel.php");
+require_once("../model/cssModels/addCssSelectorsModel.php");
 
 
 if (isset($_SESSION["id"]) && ($_SESSION["id"]) === session_id()) {

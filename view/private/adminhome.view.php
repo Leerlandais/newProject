@@ -13,21 +13,9 @@
         <p class="h1">HI BOSS</p>
         <?php include ("inc/error-message.php"); // leave this here to display any eventual error message - include this on all pages ?>
 
-    <ul class="list-group">
-        <?php
-if (is_array($cssSelectors)) {
-    foreach ($cssSelectors as $css) {
-        ?>
-            <li class="list-group-item"><?=$css['selector']?></li>
-        <?php
-    }
-}
 
-// MAKE THINGS PRETTY
-?>
-    </ul>
-
-    <ul class="list-group">
+<div class="container">
+    <ul class="list-group d-flex flex-row justify-content-around">
         <a href="?addSelector">
             <li class="list-group-item">Add Selectors</li>
         </a>
@@ -41,7 +29,21 @@ if (is_array($cssSelectors)) {
             <li class="list-group-item">Update Text</li>
         </a>
     </ul>
-    
+    </div>
+
+    <ul class="list-group">
+        <?php
+    if (is_array($cssSelectors)) {
+    foreach ($cssSelectors as $css) {
+        ?>
+            <li class="list-group-item"><?=$css['selector']?></li>
+        <?php
+    }
+}
+
+// MAKE THINGS PRETTY
+?>
+    </ul>
     <?php include ("inc/include-controller.php"); ?>
 
     <?php include ("inc/footer.private.php"); ?>
