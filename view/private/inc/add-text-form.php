@@ -1,7 +1,3 @@
-<?php
-// DO EVERYTHING NEEDED HERE. ALSO DO THIS ONE FIRST
-?>
-
 
 <?php
 $block = "";

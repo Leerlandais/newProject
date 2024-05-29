@@ -16,11 +16,11 @@
 
     <div class="d-flex flex-row">
             <label for="labelTypeSelect">Selector</label>
-                <input type="radio" name="selectorType"id="labelTypeSelect" class="mx-1" checked value="selector">
+                <input type="radio" name="selectorType"id="labelTypeSelect" class="mx-1" value="selector" <?php if($getOneText["theType"] === "selector") echo 'checked'?>>
             <label for="labelTypeId">ID</label>
-                <input type="radio" name="selectorType"id="labelTypeId" class="mx-1" value="id">
+                <input type="radio" name="selectorType"id="labelTypeId" class="mx-1" value="id" <?php if($getOneText["theType"] === "id") echo 'checked'?>>
             <label for="labelTypeClass">Class</label>
-                <input type="radio" name="selectorType"id="labelTypeClass" class="mx-1" value="class">
+                <input type="radio" name="selectorType"id="labelTypeClass" class="mx-1" value="class" <?php if($getOneText["theType"] === "class") echo 'checked'?>>
         </div>
 
         <div class="form-group text-center">

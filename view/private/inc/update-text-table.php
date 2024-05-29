@@ -17,7 +17,7 @@
                             <tbody>
                                 <?php
                                     // replace these with a foreach - $allText   
-                                    var_dump($completeTexts);
+                                   
                                     foreach ($completeTexts as $text) {
                                         ?>
                                     <tr>
