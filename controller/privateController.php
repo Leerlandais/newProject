@@ -1,7 +1,7 @@
 <?php
 
 
-$cssSelectors = getAllCssSelectors($db);
+$cssSelectors = getAllCssSelectorsByName($db);
 if (is_string($cssSelectors)) {
     $errorMessage = "No entries yet";
 }
@@ -27,9 +27,14 @@ if (isset($_POST["addSelectorName"],
           $_POST["selectorType"])) {
     $selector = standardClean($_POST["addSelectorName"]);
     $type = standardClean($_POST["selectorType"]);
-    $addNewSelector = addNewSelectorToDB($db, $selector, $type);
-    if (is_string($addNewSelector)) {
-        $errorMessage = $addNewSelector;
+    if ($selector === "" || $type === "") {
+        $errorMessage = "Please fill in the details correctly";
+         $errorMessage;
+    }else {
+        $addNewSelector = addNewSelectorToDB($db, $selector, $type);
+        if (is_string($addNewSelector)) {
+            $errorMessage = $addNewSelector;
+        }
     }
 }
 
@@ -107,3 +112,4 @@ if (isset($_POST["oneTextId"],
     // Appel du page d'accueil Admin
     $title = '???homeAdmin???';
     include "../view/private/adminhome.view.php";
+    

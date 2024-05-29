@@ -7,7 +7,7 @@
         <?php include ("../view/cdn/cssBS.php"); ?>
         <link rel="stylesheet" href="css/colours.css">
         <link rel="stylesheet" href="css/style.css">
-        <title>Document</title>
+        <title><?=$title?></title>
     </head>
     <body class="text-center">
         <p class="h1">HI BOSS</p>

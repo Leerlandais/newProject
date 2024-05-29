@@ -29,7 +29,7 @@
                 if (is_array($cssSelectors)) {
                     foreach ($cssSelectors as $css) {
                         ?>
-                        <a href="?updateCss&id=<?=$css["css_id"]?>">
+                        <a href="?updateCss&id=<?=$css["sel_id"]?>">
                             <li class="list-group-item"><?=$css['sel_name']?></li> 
                         </a>
                         <?php

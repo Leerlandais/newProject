@@ -1,5 +1,23 @@
 <?php
 
+function getAllCssSelectorsByName(PDO $db) : array | string {
+    $sql = "SELECT `np_css_selector`.`np_css_selector_name` AS sel_name, 
+                   `np_css_selector`.`np_css_selector_id` AS sel_id
+            FROM `np_css_selector`";
+
+try {
+    $query = $db->query($sql);
+        if ($query->rowCount() === 0) return "No entries yet"; //stop here if there is nothing in the db yet
+    $result = $query->fetchAll();
+    $query->closeCursor();
+    return $result;
+
+    }catch (Exception $e) {
+        $e->getMessage();
+        return $e;
+    }
+}
+
 function getAllCssSelectors(PDO $db) : array | string {
     $sql = "SELECT `np_css_selector`.`np_css_selector_name` AS sel_name, 
                    `np_css_selector`.`np_css_selector_id` AS css_id,
