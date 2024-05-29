@@ -15,11 +15,11 @@
         <textarea name="oneTextFre" value="<?=$getOneText["frText"]?>"><?=$getOneText["frText"]?></textarea>
 
     <div class="d-flex flex-row">
-            <label for="labelTypeSelect">Selector</label>
+            <label for="labelTypeSelect" class="radioSelectLabel"></label>
                 <input type="radio" name="selectorType"id="labelTypeSelect" class="mx-1" value="selector" <?php if($getOneText["theType"] === "selector") echo 'checked'?>>
-            <label for="labelTypeId">ID</label>
+            <label for="labelTypeId" class="radioIdLabel"></label>
                 <input type="radio" name="selectorType"id="labelTypeId" class="mx-1" value="id" <?php if($getOneText["theType"] === "id") echo 'checked'?>>
-            <label for="labelTypeClass">Class</label>
+            <label for="labelTypeClass" class="radioClassLabel"></label>
                 <input type="radio" name="selectorType"id="labelTypeClass" class="mx-1" value="class" <?php if($getOneText["theType"] === "class") echo 'checked'?>>
         </div>
 

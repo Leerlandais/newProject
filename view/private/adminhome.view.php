@@ -10,13 +10,13 @@
         <title><?=$title?></title>
     </head>
     <body class="text-center">
-        <p class="h1">HI BOSS</p>
+        <p class="h1" id="adminHomeWelcomeMessage"></p>
         <form method="POST" class="d-flex flex-row">
     <button class="btn langButton langEN" value="en" type="submit" name="user_lang" id="englishButton"></button>
     <button class="btn langButton langFR" value="fr" type="submit" name="user_lang" id="frenchButton"></button>
 </form>
 
-        <?php include ("inc/error-message.php"); // leave this here to display any eventual error message - include this on all pages ?>
+    
 <?php
 
 ?>
@@ -24,25 +24,21 @@
 <div class="container">
     <ul class="list-group d-flex flex-row justify-content-around">
         <a href="?addSelector">
-            <li class="list-group-item" id="navAddSelect"></li>
-        </a>
-        <a href="?updateSelector">
-            <li class="list-group-item" id="navUpdSelect"></li>
+            <li class="list-group-item adminHomeNavLink" id="navLinkUpdateSelector"></li>
         </a>
         <a href="?addText">
-            <li class="list-group-item" id="navAddTxt"></li>
+            <li class="list-group-item adminHomeNavLink" id="navLinkAddTxt"></li>
         </a>
         <a href="?updateText">
-            <li class="list-group-item" id="navUpdText"></li>
+            <li class="list-group-item adminHomeNavLink" id="navLinkUpdText"></li>
+        </a>
+        <a href="?logout">
+            <li class="list-group-item adminHomeNavLink" id="navLinkLogout"></li>
         </a>
     </ul>
     </div>
 
-    <h3 id="myCodeRocks"></h3>
-    <h4 class="generalHeader" id="generalHeader1"></h4>
-    <h5 class="generalHeader" id="generalHeader2"></h4>
-    <h6 class="generalHeader" id="generalHeader3"></h4>
-
+    <?php include ("inc/error-message.php"); // leave this here to display any eventual error message - include this on all pages ?>
 
     <?php include ("inc/include-controller.php"); ?>
 

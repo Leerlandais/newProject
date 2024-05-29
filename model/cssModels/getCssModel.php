@@ -1,8 +1,9 @@
 <?php
 
 function getAllCssSelectorsByName(PDO $db) : array | string {
-    $sql = "SELECT `np_css_selector`.`np_css_selector_name` AS sel_name, 
-                   `np_css_selector`.`np_css_selector_id` AS sel_id
+    $sql = "SELECT `np_css_selector_name` AS sel_name, 
+                   `np_css_selector_type` AS sel_type, 
+                   `np_css_selector_id` AS sel_id
             FROM `np_css_selector`";
 
 try {
