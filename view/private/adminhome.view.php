@@ -38,6 +38,8 @@
     </ul>
     </div>
 
+    <h3 id="myCodeRocks"></h3>
+
 
     <?php include ("inc/include-controller.php"); ?>
 
