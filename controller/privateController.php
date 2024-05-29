@@ -91,7 +91,7 @@ if (isset($_POST["oneTextId"],
           $_POST["oneTextFre"],
           $_POST["selectorType"]
         ) &&
-        ctype_digit($_POST["oneTypeId"])) {
+        ctype_digit($_POST["oneTextId"])) {
             $id     = intval(intClean($_POST["oneTextId"]));
             $elem   = standardClean($_POST["oneTextElem"]);
             $eng    = standardClean($_POST["oneTextEng"]);
@@ -99,6 +99,9 @@ if (isset($_POST["oneTextId"],
             $type   = standardClean($_POST["selectorType"]);
 
     $updateText = updateOneText($db, $id, $elem, $eng, $fre, $type);
+    if (is_string($updateText)) {
+        $errorMessage = $updateText;
+    }
         }
 
     // Appel du page d'accueil Admin
