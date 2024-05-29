@@ -4,9 +4,11 @@
                         <table class="table table-bordered table-striped" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true">
                         <thead>
                                 <tr>
-                                    <th class="text-center updateTableHeadId"></th>
-                                    <th class="text-center updateTableHeadName"></th>
-                                    <th class="text-center updateTableHeadText"></th>
+                                    <th class="text-center" id="updateTableHeadId">ID</th>
+                                    <th class="text-center" id="updateTableHeadName">Element</th>
+                                    <th class="text-center" id="updateTableHeadTextEn">Content</th>
+                                    <th class="text-center" id="updateTableHeadTextFr">Contenu</th>
+                                    <th class="text-center" id="updateTableHeadType">Type</th>
                                     <th class="text-center">Modifier</th>
   
                                     
@@ -14,22 +16,26 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    // replace these with a foreach - $allText                                        
+                                    // replace these with a foreach - $allText   
+                                    var_dump($completeTexts);
+                                    foreach ($completeTexts as $text) {
                                         ?>
                                     <tr>
-                                        <td><? ?></td>
-                                        <td><? ?></td>
-                                        <td><? ?></td>
+                                        <td><?=$text["id"]?></td>
+                                        <td><?=$text["elem"]?></td>
+                                        <td><?=$text["enText"]?></td>
+                                        <td><?=$text["frText"]?></td>
+                                        <td><?=$text["theType"]?></td>
   
-                                        <td><a href="?update&item=<? ?>"><img src="img/pencil.svg" alt="update"></a></td>
+                                        <td><a href="?update&item=<?=$text["id"]?>"><img src="img/pencil.svg" alt="update"></a></td>
   
                                     </tr>
                                     <?php
-                              
+                              }                                     
                                     ?>
                             </tbody>
                         </table>
 
                     </div>
-
+<button class="submitButton d-none"></button>
                     </div>

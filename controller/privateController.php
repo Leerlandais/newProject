@@ -2,10 +2,15 @@
 
 
 $cssSelectors = getAllCssSelectors($db);
+if (is_string($cssSelectors)) {
+    $errorMessage = "No entries yet";
+}
+
 if (isset($_POST["user_lang"])) {
     $_SESSION["np_user_lang"] = $_POST["user_lang"];
 }
 $allText = getTextByUserLang($db, $_SESSION["np_user_lang"]);
+$completeTexts = getAllTexts($db);
 
 
 if (isset($_GET["logout"])) {
@@ -14,9 +19,7 @@ if (isset($_GET["logout"])) {
 }
 
 
-    if (is_string($cssSelectors)) {
-        $errorMessage = "No entries yet";
-    }
+
 
 
 // ADD SELECTOR    
@@ -52,6 +55,8 @@ if (isset($_POST["addCssSelector"],
 
         $addAttrib = addAttribToSelector($db, $selector, $attrib, $newVal);
     }          
+
+
 // ADD TEXT
 if (isset(
     $_POST["selectInp"],
@@ -70,6 +75,31 @@ if (is_string($addNewText)) {
     $errorMessage = $addNewText;
 }
     }
+
+// GET TEXT FOR UPDATE
+if (isset($_GET["item"]) &&
+          ctype_digit($_GET["item"])) {
+    $id = intval(intClean($_GET["item"]));
+$getOneText = getOneTextForUpdate($db, $id);
+                }
+
+
+// UPDATE ONE TEXT
+if (isset($_POST["oneTextId"],
+          $_POST["oneTextElem"],
+          $_POST["oneTextEng"],
+          $_POST["oneTextFre"],
+          $_POST["selectorType"]
+        ) &&
+        ctype_digit($_POST["oneTypeId"])) {
+            $id     = intval(intClean($_POST["oneTextId"]));
+            $elem   = standardClean($_POST["oneTextElem"]);
+            $eng    = standardClean($_POST["oneTextEng"]);
+            $fre    = standardClean($_POST["oneTextFre"]);
+            $type   = standardClean($_POST["selectorType"]);
+
+    $updateText = updateOneText($db, $id, $elem, $eng, $fre, $type);
+        }
 
     // Appel du page d'accueil Admin
     $title = '???homeAdmin???';

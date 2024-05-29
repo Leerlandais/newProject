@@ -24,3 +24,10 @@ $errorMessage = "Couldn't add that";
 return $errorMessage;
 }
 }
+
+
+function updateOneText(PDO $db, int $id, string $elem, string $eng, string $fre, string $type) : bool | string {
+    // need a function here ;p
+    
+    return;
+}
