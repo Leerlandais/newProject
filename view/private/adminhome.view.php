@@ -39,6 +39,9 @@
     </div>
 
     <h3 id="myCodeRocks"></h3>
+    <h4 class="generalHeader" id="generalHeader1"></h4>
+    <h5 class="generalHeader" id="generalHeader2"></h4>
+    <h6 class="generalHeader" id="generalHeader3"></h4>
 
 
     <?php include ("inc/include-controller.php"); ?>
