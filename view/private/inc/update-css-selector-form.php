@@ -28,15 +28,16 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
       if(!$getSelector["att_name"]) {
     ?>
         <h5 id="selectorHasNoAtt"></h5>
+     
     <?php
       }else
     ?>
-        <p class="h5" id="selectorAddAttFlag"></p>
+       <h6 id="selectorNeedsAtt"></h6>
     <input type="text" name="addCssSelector" class="d-none" value="<?=$getSelector["np_css_selector_id"]?>" <?=$block?>>
     <label for="addCssAttrib">Attrib : </label>
-    <input type="text" class="form-control text-center" name="addCssAttrib"  value="<?=$getSelector["att_name"]?>" placeholder="<?=$getSelector["att_name"]?>" <?=$block?>>
+    <input type="text" class="form-control text-center" name="addCssAttrib"  value="<?=$getSelector["att_name"]?>" placeholder="<?=$getSelector["att_name"]?>" required <?=$block?>>
     <label for="addCssValue">Value : </label>
-    <input type="text" class="form-control text-center" name="addCssValue"  value="<?=$getSelector["new_val"]?>" <?=$block?>>
+    <input type="text" class="form-control text-center" name="addCssValue"  value="<?=$getSelector["new_val"]?>" required <?=$block?>>
 
     <button type="submit" class="btn btn-primary submitButton" <?=$block?>></button>
   </form>
