@@ -9,7 +9,8 @@ function getTextByUserLang(PDO $db, string $userLang) : array | string {
     
         $sql = "SELECT `np_text_element` AS `elem`, 
                 $lang AS `theText`, 
-                `np_text_type` AS theType  
+                `np_text_type` AS theType,
+                `np_text_lock` AS locked 
                 FROM `np_text`";
     
     try{
@@ -34,7 +35,8 @@ function getTextByUserLang(PDO $db, string $userLang) : array | string {
                         `np_text_en` AS `enText`, 
                         `np_text_fr` AS `frText`,
                         `np_text_type` AS theType,
-                        `np_text_id` AS `id`  
+                        `np_text_id` AS `id`,
+                        `np_text_lock` AS locked   
                 FROM `np_text`";
         try {
             $query = $db->query($sql);
@@ -57,7 +59,8 @@ function getTextByUserLang(PDO $db, string $userLang) : array | string {
                        `np_text_en` AS `enText`, 
                        `np_text_fr` AS `frText`,
                        `np_text_type` AS theType,
-                       `np_text_id` AS `id`  
+                       `np_text_id` AS `id`,
+                       `np_text_lock` AS locked  
                 FROM `np_text`
                 WHERE `np_text_id` = ?";
         $stmt = $db->prepare($sql);

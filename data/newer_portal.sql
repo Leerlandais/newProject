@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 29, 2024 at 06:12 AM
+-- Generation Time: May 30, 2024 at 04:46 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -35,17 +35,7 @@ CREATE TABLE IF NOT EXISTS `np_css_attrib` (
   `np_css_attrib_old_val` varchar(1024) COLLATE utf8mb4_general_ci NOT NULL,
   `np_css_attrib_def_val` varchar(1024) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`np_css_attrib_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `np_css_attrib`
---
-
-INSERT INTO `np_css_attrib` (`np_css_attrib_id`, `np_css_attrib_name`, `np_css_attrib_new_val`, `np_css_attrib_old_val`, `np_css_attrib_def_val`) VALUES
-(2, 'background', 'url&lpar;\"img/gb.svg\"&rpar;', '', ''),
-(4, 'background', 'linear-gradient(-90deg, hsla(108, 14%, 57%, 1) 0%, hsla(217, 17%, 94%, 1) 100%)', '', 'linear-gradient(-90deg, hsla(108, 14%, 57%, 1) 0%, hsla(217, 17%, 94%, 1) 100%)'),
-(5, 'background-size', 'cover', '', ''),
-(6, 'border', '1px red solid', '', '');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -58,7 +48,8 @@ CREATE TABLE IF NOT EXISTS `np_css_selector` (
   `np_css_selector_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `np_css_selector_name` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
   `np_css_selector_type` varchar(16) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'selector',
-  PRIMARY KEY (`np_css_selector_id`)
+  PRIMARY KEY (`np_css_selector_id`),
+  UNIQUE KEY `np_css_selector_name` (`np_css_selector_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -66,9 +57,9 @@ CREATE TABLE IF NOT EXISTS `np_css_selector` (
 --
 
 INSERT INTO `np_css_selector` (`np_css_selector_id`, `np_css_selector_name`, `np_css_selector_type`) VALUES
-(1, 'body', 'selector'),
-(3, 'englishButton', 'id'),
-(4, 'submitButton', 'class');
+(2, 'h1', 'selector'),
+(3, 'updateSelectorTypeClass', 'id'),
+(4, 'radioSelectLabel', 'class');
 
 -- --------------------------------------------------------
 
@@ -83,16 +74,6 @@ CREATE TABLE IF NOT EXISTS `np_selector_has_attrib` (
   PRIMARY KEY (`selector_has_id`,`attrib_has_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `np_selector_has_attrib`
---
-
-INSERT INTO `np_selector_has_attrib` (`selector_has_id`, `attrib_has_id`) VALUES
-(1, 4),
-(3, 2),
-(3, 5),
-(4, 6);
-
 -- --------------------------------------------------------
 
 --
@@ -103,35 +84,39 @@ DROP TABLE IF EXISTS `np_text`;
 CREATE TABLE IF NOT EXISTS `np_text` (
   `np_text_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `np_text_element` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
-  `np_text_en` text COLLATE utf8mb4_general_ci NOT NULL,
+  `np_text_en` varchar(4096) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `np_text_fr` text COLLATE utf8mb4_general_ci NOT NULL,
   `np_text_type` varchar(8) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'id',
+  `np_text_lock` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`np_text_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `np_text`
 --
 
-INSERT INTO `np_text` (`np_text_id`, `np_text_element`, `np_text_en`, `np_text_fr`, `np_text_type`) VALUES
-(1, 'typeInpIdLabel', 'IDs', 'ID', 'id'),
-(2, 'typeInpClassLabel', 'Class', 'Classe', 'id'),
-(3, 'submitButton', 'Submit', 'Soumettre', 'class'),
-(4, 'addSelectorNameLabel', 'Selector Name :', 'Nom du Sélecteur', 'id'),
-(5, 'existingSelectorList', 'Existing Selectors', 'Sélecteurs Existants', 'id'),
-(6, 'existingSelectorHead', 'Click to Update', 'Cliquez pour Mettre à Jour', 'id'),
-(7, 'updateSelectorField', 'Add Style to Element', 'Ajouter du Style à l&#039;élément', 'id'),
-(8, 'undoButton', 'Undo', 'Annuler', 'id'),
-(9, 'resetButton', 'Reset', 'Réinitialiser', 'id'),
-(13, 'updateTableHeadId', 'ID', 'ID', 'id'),
-(14, 'updateTableHeadName', 'Element ID', 'ID de l&#039;élément', 'id'),
-(15, 'updateTableHeadTextEn', 'Content - Eng', 'Contenu - Ang', 'id'),
-(17, 'navAddSelect', 'Add Selector', 'Ajout un Sélecteur', 'id'),
-(18, 'navAddTxt', 'Add Text', 'Ajout du Texte', 'id'),
-(19, 'navUpdText', 'Update Text', 'Mettre Texte à Jour', 'id'),
-(21, 'updateTableHeadTextFr', 'Content - Fre', 'Contenu - Fra', 'id'),
-(22, 'updateTableHeadType', 'Type', 'Type', 'id'),
-(23, 'updateOneTextLegend', 'Update a Text', 'Mettre à Jour une Texte', 'id');
+INSERT INTO `np_text` (`np_text_id`, `np_text_element`, `np_text_en`, `np_text_fr`, `np_text_type`, `np_text_lock`) VALUES
+(1, 'adminHomeWelcomeMessage', 'Welcome to the Administration Page', 'Bienvenue sur la Page d&#039;Administration', 'id', 1),
+(2, 'navLinkUpdateSelector', 'Add/Update Selector', 'Ajout/Mise à Jour Selecteur', 'id', 1),
+(3, 'submitButton', 'Submit', 'Soumettre', 'class', 1),
+(4, 'navLinkAddTxt', 'Add Text', 'Ajout du Texte', 'id', 1),
+(5, 'navLinkUpdText', 'Update Text', 'Mettre Texte à Jour', 'id', 1),
+(6, 'navLinkLogout', 'Logout', 'Déconnexion', 'id', 0),
+(7, 'addTextLegend', 'Add New Text', 'Ajouter un Nouveau Texte', 'id', 0),
+(8, 'radioClassLabel', 'Class', 'Classe', 'class', 0),
+(9, 'radioIdLabel', 'ID', 'ID', 'class', 0),
+(10, 'updateSelectorLegend', 'Click an item to update it', 'Cliquez sur un élément pour le mettre à jour', 'id', 0),
+(11, 'addSelectorLegend', 'Add a New Selector', 'Ajouter un Nouveau Sélecteur', 'id', 0),
+(12, 'radioSelectLabel', 'Selector', 'Selecteur', 'class', 0),
+(15, 'copyrightName', '<a href=\"https://leerlandais.com\">Lee Brennan</a>', '<a href=\"https://leerlandais.com\">Lee Brennan</a>', 'id', 0),
+(16, 'updateSelectorTypeSelect', 'Selector', 'Selecteur', 'id', 0),
+(17, 'updateSelectorTypeId', 'ID', 'ID', 'id', 0),
+(18, 'updateSelectorTypeClass', 'Class', 'Classe', 'id', 0),
+(19, 'addTextselectLabelName', 'Selector', 'Selecteur', 'id', 0),
+(20, 'addTextEnLabelName', 'English Text', 'Texte Anglais', 'id', 0),
+(21, 'addTextFrLabelName', 'French Text', 'Texte Français', 'id', 0),
+(23, 'footerScreenWidth', 'The screen width is:', 'La largeur de l\'écran est :', 'id', 0),
+(24, 'securityWarning', 'You really didn\'t expect that to work, did you?', 'Pensais-tu vraiment que cela fonctionnerait?', 'id', 0);
 
 -- --------------------------------------------------------
 

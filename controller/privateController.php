@@ -71,8 +71,8 @@ if (isset(
     )
 ){
 $selector = standardClean($_POST["selectInp"]);
-$english  = standardClean($_POST["englishInp"]);
-$french   = standardClean($_POST["frenchInp"]);
+$english  = trim($_POST["englishInp"]);
+$french   = trim($_POST["frenchInp"]);
 $type     = standardClean($_POST["typeInp"]);
 
 $addNewText = addNewText($db, $selector, $english, $french, $type);
