@@ -17,7 +17,7 @@
                             <tbody>
                                 <?php
                                     // replace these with a foreach - $allText   
-                                   
+                                    $block =  'style="cursor: not-allowed;"';
                                     foreach ($completeTexts as $text) {
                                         ?>
                                     <tr>
@@ -26,8 +26,8 @@
                                         <td><?=$text["enText"]?></td>
                                         <td><?=$text["frText"]?></td>
                                         <td><?=$text["theType"]?></td>
-  
-                                        <td><a href="?update&item=<?=$text["id"]?>"><img src="img/pencil.svg" alt="update"></a></td>
+                                            
+                                        <td><a href="?update&item=<?=$text["id"]?>" <?php if ($text["locked"] === 1 && $_SESSION["np_user_permission"] !== 255)  echo $block;?>><img src="img/pencil.svg" alt="update"></a></td>
   
                                     </tr>
                                     <?php

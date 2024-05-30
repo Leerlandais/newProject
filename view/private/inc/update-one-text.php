@@ -1,5 +1,11 @@
 <?php
-// DO EVERYTHING NEEDED HERE. AGAIN, FINISH THE INSERT FIRST
+if ($getOneText["locked"] === 1 && $_SESSION["np_user_permission"] !== 255) {
+    ?>
+        <div class="container d-flex flex-column align-items-center">
+        <h2 id="securityWarning"></h2>
+        </div>
+    <?php
+}else {
 ?>
 <div class="container d-flex flex-column align-items-center">
 <fieldset class="reset">
@@ -30,3 +36,5 @@
 </form>
 </fieldset>
 </div>
+
+<?php } ?>

@@ -18,7 +18,7 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
   <div class="container d-flex flex-row">
   <div class="container text-center">
     <fieldset class="reset"><legend  class="reset" id="addTextLegend"></legend>
-    <form action="" method="POST" id = "add-textForm" class="d-flex flex-column align-items-center">
+    <form action="./" method="POST" id = "add-textForm" class="d-flex flex-column align-items-center">
       
       <label for="selectInp" id="addTextselectLabelName"></label>
       <input class="ps-2" type="text" name="selectInp" id="selectInp" aria-describedby="userNameField" placeholder="selector" <?=$block?>>
