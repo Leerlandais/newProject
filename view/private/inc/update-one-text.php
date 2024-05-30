@@ -20,13 +20,13 @@ if ($getOneText["locked"] === 1 && $_SESSION["np_user_permission"] !== 255) {
     <label for="oneTextFre" id="oneTextFreLabel">fre-</label>
         <textarea name="oneTextFre" value="<?=$getOneText["frText"]?>"><?=$getOneText["frText"]?></textarea>
 
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row justify-content-center">
             <label for="labelTypeSelect" class="radioSelectLabel"></label>
-                <input type="radio" name="selectorType"id="labelTypeSelect" class="mx-1" value="selector" <?php if($getOneText["theType"] === "selector") echo 'checked'?>>
+                <input type="radio" name="selectorType"id="labelTypeSelect" class="ps-0 me-2" value="selector" <?php if($getOneText["theType"] === "selector") echo 'checked'?>>
             <label for="labelTypeId" class="radioIdLabel"></label>
-                <input type="radio" name="selectorType"id="labelTypeId" class="mx-1" value="id" <?php if($getOneText["theType"] === "id") echo 'checked'?>>
+                <input type="radio" name="selectorType"id="labelTypeId" class="ps-0 me-2" value="id" <?php if($getOneText["theType"] === "id") echo 'checked'?>>
             <label for="labelTypeClass" class="radioClassLabel"></label>
-                <input type="radio" name="selectorType"id="labelTypeClass" class="mx-1" value="class" <?php if($getOneText["theType"] === "class") echo 'checked'?>>
+                <input type="radio" name="selectorType"id="labelTypeClass" class="ps-0 me-2" value="class" <?php if($getOneText["theType"] === "class") echo 'checked'?>>
         </div>
 
         <div class="form-group text-center">

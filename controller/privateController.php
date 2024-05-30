@@ -48,7 +48,7 @@ if (isset($_GET["updateCss"],
             $getSelector    = getSelectorForUpdate($db, $selector);
           }
 
-// ADD SELECTOR
+// ADD SELECTOR ATTRIB
 if (isset($_POST["addCssSelector"],
           $_POST["addCssAttrib"],
           $_POST["addCssValue"]

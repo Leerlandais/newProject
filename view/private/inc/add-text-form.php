@@ -32,10 +32,10 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
       <div class="d-flex flex-row">
         
         <label for="typeInpId" class="radioIdLabel mx-2"></label>
-        <input class="ps-2" type="radio" name="typeInp" id="typeInpId" checked value="id">
+        <input class="ps-2 me-1" type="radio" name="typeInp" id="typeInpId" checked value="id">
         
         <label for="typeInpClass" class="radioClassLabel mx-2"></label>
-        <input class="ps-2" type="radio" name="typeInp" id="typeInpClass" value="class">
+        <input class="ps-2 me-1" type="radio" name="typeInp" id="typeInpClass" value="class">
         
       </div>
       
